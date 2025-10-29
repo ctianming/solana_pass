@@ -1,0 +1,35 @@
+# Build artifacts
+/target/
+**/target/
+
+# Anchor generated deploy outputs
+**/target/deploy/
+**/target/idl/
+**/target/types/
+
+# Compiled objects
+**/*.so
+**/*.rlib
+**/*.rmeta
+**/*.a
+
+# Node/NPM
+/node_modules/
+**/node_modules/
+
+# Environment & secrets
+*.env
+*.env.*
+**/*-keypair.json
+*.key
+*.pem
+*.der
+*.pfx
+
+# Logs
+*.log
+
+# Editor/OS noise
+.DS_Store
+.vscode/
+.idea/
