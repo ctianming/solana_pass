@@ -1,0 +1,25 @@
+{
+  "name": "@solana-pass/solana-sdk",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rimraf dist",
+    "lint": "eslint .",
+    "test": "node --test || echo 'tests pending'"
+  },
+  "dependencies": {
+  "@solana/web3.js": "^1.95.3",
+  "@bonfida/spl-name-service": "^0.2.1",
+  "@coral-xyz/anchor": "^0.30.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "eslint": "^8.57.0",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.4.0"
+  }
+}

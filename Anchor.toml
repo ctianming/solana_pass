@@ -1,0 +1,22 @@
+[features]
+seeds = true
+skip-lint = false
+
+[programs.localnet]
+social_draw = "GYzL4uQngaBZzsopSackFZNJpy7uP5PMsFtCnmL4aGHt"
+nfc_registry = "9dP6Ndf5x5gbB1ezBmh4kyPeuyXCii9jWoVUSbtWcc75"
+
+[programs.devnet]
+social_draw = "GYzL4uQngaBZzsopSackFZNJpy7uP5PMsFtCnmL4aGHt"
+nfc_registry = "9dP6Ndf5x5gbB1ezBmh4kyPeuyXCii9jWoVUSbtWcc75"
+
+[programs.testnet]
+social_draw = "GYzL4uQngaBZzsopSackFZNJpy7uP5PMsFtCnmL4aGHt"
+nfc_registry = "9dP6Ndf5x5gbB1ezBmh4kyPeuyXCii9jWoVUSbtWcc75"
+
+[provider]
+cluster = "Testnet"
+wallet = "/home/amyseer/.config/solana/testnet-id.json"
+
+[scripts]
+test = "anchor test"

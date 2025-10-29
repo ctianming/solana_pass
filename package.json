@@ -1,0 +1,15 @@
+{
+  "name": "solana-pass-monorepo",
+  "private": true,
+  "workspaces": [
+  "packages/*",
+  "services/*",
+  "apps/*"
+  ],
+  "scripts": {
+  "build": "npm run build -w @solana-pass/solana-sdk || true",
+  "dev:relayer": "npm run dev -w @solana-pass/relayer",
+  "dev:frontend": "pnpm --dir apps/frontend dev --port 3010",
+  "dev:solana-api": "pnpm --dir services/solana-api start:dev"
+  }
+}

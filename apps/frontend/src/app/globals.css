@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  /* Extended palette inspired by demo-repository */
+  --bg-color: #FAFBFC;
+  --primary-text: #1F2937;
+  --secondary-text: #6B7280;
+  --muted-text: #9CA3AF;
+  --blue-accent: #6366f1;
+  --teal-accent: #10b981;
+  --surface: rgba(255, 255, 255, 0.95);
+  --surface-border: rgba(76, 61, 255, 0.1);
+  --card-bg: rgba(255,255,255,0.85);
+  --card-border: rgba(76,61,255,0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  --bg-color: #000000;
+  --primary-text: #ffffff;
+  --secondary-text: #9CA3AF;
+  --muted-text: #6B7280;
+  --surface: rgba(31,41,55,0.95);
+  --surface-border: rgba(76,61,255,0.15);
+  --card-bg: rgba(17,24,39,0.8);
+  --card-border: rgba(76,61,255,0.12);
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-geist-sans, Arial, Helvetica, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Animated gradient background with blur orbs */
+.animated-background { position: fixed; inset: 0; z-index: -1; overflow: hidden; background: linear-gradient(135deg,#f8fafc 0%,#f1f5f9 25%,#e2e8f0 50%,#cbd5e1 75%,#94a3b8 100%); }
+@media (prefers-color-scheme: dark) { .animated-background { background: linear-gradient(135deg,#000 0%,#0a0a0a 25%,#1a1a1a 50%,#0f0f23 75%,#1a1a2e 100%);} }
+.blur-orb { position: absolute; border-radius: 9999px; filter: blur(120px); opacity: 0.85; animation: float 30s infinite ease-in-out; }
+.orb1 { top:-20%; left:-20%; width:40%; height:40%; background: linear-gradient(45deg, rgba(76,61,255,.3), rgba(99,102,241,.25), rgba(139,92,246,.2)); }
+.orb2 { bottom:-20%; right:-20%; width:45%; height:45%; background: linear-gradient(45deg, rgba(76,61,255,.25), rgba(16,185,129,.3), rgba(59,130,246,.2)); animation-direction: reverse; }
+.orb3 { top:50%; left:50%; width:30%; height:30%; transform: translate(-50%,-50%); background: linear-gradient(45deg, rgba(76,61,255,.2), rgba(236,72,153,.15), rgba(245,158,11,.1)); }
+@keyframes float { 0%,100% { transform: translate(0,0);} 25% { transform: translate(10vw,-10vh);} 50% { transform: translate(-8vw,15vh);} 75% { transform: translate(12vw,8vh);} }
+
+/* Glassy card */
+.card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+.card-pad { padding: 20px; }
+
+/* Buttons */
+.btn { display:inline-flex; align-items:center; justify-content:center; border-radius: 10px; padding: 10px 14px; border: 1px solid rgba(0,0,0,0.06); background: var(--primary-text); color: var(--bg-color); }
+.btn-secondary { background: transparent; color: var(--primary-text); border-color: rgba(0,0,0,0.12); }
+.btn:hover { filter: brightness(1.02); }
+
+/* Grid overlay (subtle) */
+.grid-overlay { position:absolute; inset:0; background-size: 32px 32px; background-image: linear-gradient(to right, rgba(99,102,241,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(99,102,241,0.05) 1px, transparent 1px); pointer-events:none; }
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
